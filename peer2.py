@@ -2,7 +2,7 @@ import socket as s
 import sys
 import time
 
-HOST = s.gethostbyname(s.gethostname())
+HOST = s.gethostbyname(s.gethostname()) #same as of server
 PORT = 8888
 print(f"Host name IP is {HOST} and Port used is {PORT}")
 time.sleep(2)
@@ -12,7 +12,7 @@ peer2.connect((HOST, PORT))
 
 while True:
     peer2.send(f"Hello, How are you?\nI need a file can you share me that file which I send you last day\n".encode('utf-8'))
-    print(peer2.recv(1024).decode('utf-8'))
+    print(peer2.recv(1024).decode('utf-8')) # 1st Message received
     time.sleep(2)
 
     coming_File = peer2.recv(1024).decode()

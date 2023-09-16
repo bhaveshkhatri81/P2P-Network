@@ -29,19 +29,20 @@ def choose_Port():
     return PORT
 
 def binding(HOST, PORT):
-    peer1 = s.socket(s.AF_INET, s.SOCK_STREAM)
+    peer1 = s.socket(s.AF_INET, s.SOCK_STREAM) # AF_INET as shaing over internet #using sock_stream because we are using TCP
     peer1.bind((HOST, PORT))
-    peer1.listen(1)
+    peer1.listen(1) # will listen only one connection
 
     while True:
         comm, add = peer1.accept()
         print(f"You are connected to the Peer 2 with IP {add}\n")
         time.sleep(2)
 
-        print(f"Message received form the Peer 2 is:\n{comm.recv(224).decode('utf-8')}")
+        print(f"Message received form the Peer 2 is:\n{comm.recv(224).decode('utf-8')}") # 1st message received
         time.sleep(2)
-        comm.send(f"I have that file will be sharing the file now".encode('utf-8'))
-
+        comm.send(f"I have that file will be sharing the file now".encode('utf-8')) # 1st message send
+        
+        # sharing the file process starts
         file_name = str(input(f"Enter the file path/If in the same directory enter the file name: "))
         comm.send(str(file_name).encode('utf-8'))
 

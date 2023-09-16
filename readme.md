@@ -72,4 +72,14 @@ python peer2.py
 
    - The file will be received and saved as `coming_File1.png`.
 
+ **Reference**
+
+   - https://docs.python.org/3/library/socket.html
+   - https://www.geeksforgeeks.org/file-transfer-using-tcp-socket-in-python
+   - https://www.youtube.com/watch?v=YwWfKitB8aA
+   - https://krishisanskriti.org/vol_image/02Jul201506073518.pdf
+   - https://www.youtube.com/playlist?list=PLS1QulWo1RIZGSgRsn0b8w9uoWM1gHDpo
+   - https://medium.com/@luishrsoares/implementing-peer-to-peer-data-exchange-in-python-8e69513489af
+
+
 ---
